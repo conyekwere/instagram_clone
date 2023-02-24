@@ -40,13 +40,5 @@ extension UIView {
         
     }
     
-    var myCenter: CGPoint {
-        get {
-            return center
-        }
-        set {
-            center = newValue
-        }
-    }
     
 }
