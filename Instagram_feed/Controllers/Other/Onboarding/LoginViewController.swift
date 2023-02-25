@@ -9,7 +9,10 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-                                               
+    struct Constants{
+        static let cornerRadius: CGFloat = 8.0
+        static let inputHeight: CGFloat = 52.0
+    }
     
     private let usernameEmailField: UITextField = {
         let field = UITextField()
@@ -20,7 +23,7 @@ class LoginViewController: UIViewController {
         field.leftView = UIView(frame: CGRect(x:0, y: 0, width: 10, height:0))
         field.autocapitalizationType = .none
         field.autocorrectionType = .no
-        field.layer.cornerRadius = 8.0
+        field.layer.cornerRadius = Constants.cornerRadius
         field.backgroundColor = .secondarySystemBackground
         field.layer.borderWidth = 1.0
         field.layer.borderColor = UIColor.secondaryLabel.cgColor
@@ -36,7 +39,7 @@ class LoginViewController: UIViewController {
         field.leftView = UIView(frame: CGRect(x:0, y: 0, width: 10, height:0))
         field.autocapitalizationType = .none
         field.autocorrectionType = .no
-        field.layer.cornerRadius = 8.0
+        field.layer.cornerRadius = Constants.cornerRadius
         field.isSecureTextEntry = true
         field.backgroundColor = .secondarySystemBackground
         field.layer.borderWidth = 1.0
@@ -49,7 +52,7 @@ class LoginViewController: UIViewController {
         button.backgroundColor = .systemGray4
         button.setTitle("Log in ", for: .normal)
         button.layer.masksToBounds = true
-        button.layer.cornerRadius = 8.0
+        button.layer.cornerRadius = Constants.cornerRadius
         button.backgroundColor = .systemBlue
         button.setTitleColor(.white, for: .normal)
         return button
@@ -98,7 +101,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginButton.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(didTapRegisterButton), for: .touchUpInside)
         
         createAccountButton.addTarget(self, action: #selector(didTapCreateAccountButton), for: .touchUpInside)
         
@@ -128,14 +131,14 @@ class LoginViewController: UIViewController {
             height: view.height/3.0)
  
         
-        // to move bellow staus bar  y: view.safeAreaInsets.top
+        // to move below staus bar  y: view.safeAreaInsets.top
         
         
         usernameEmailField.frame = CGRect(
             x:25,
             y: headerView.bottom + 40,
             width: view.width - 50,
-            height:52
+            height: Constants.inputHeight
         )
         
         
@@ -143,35 +146,35 @@ class LoginViewController: UIViewController {
             x:25,
             y: usernameEmailField.bottom + 10,
             width: view.width - 50,
-            height: 52
+            height: Constants.inputHeight
         )
         
         loginButton.frame = CGRect(
             x:25,
             y: passwordField.bottom + 10,
             width: view.width - 50,
-            height: 52
+            height: Constants.inputHeight
         )
         
         createAccountButton.frame = CGRect(
             x:25,
             y: loginButton.bottom + 10,
             width: view.width - 50,
-            height: 52
+            height: Constants.inputHeight
         )
         
         termsButton.frame = CGRect(
             x:10,
             y: view.height - view.safeAreaInsets.bottom - 100,
             width: view.width - 20,
-            height: 50
+            height: Constants.inputHeight
         )
         
         privacyButton.frame = CGRect(
             x:10,
             y: view.height - view.safeAreaInsets.bottom - 50,
             width: view.width - 20,
-            height: 50
+            height: Constants.inputHeight
         )
         
         view.backgroundColor = .systemBackground

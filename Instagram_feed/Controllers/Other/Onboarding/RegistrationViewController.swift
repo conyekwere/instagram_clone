@@ -11,13 +11,13 @@ class RegistrationViewController: UIViewController {
     
     
     struct Constants{
-        
         static let cornerRadius: CGFloat = 8.0
+        static let inputHeight: CGFloat = 52.0
     }
     
     private let usernameField: UITextField = {
         let field = UITextField()
-        field.placeholder = "Username or Email..."
+        field.placeholder = "Username"
         // on keyboard say continue
         field.returnKeyType = .next
         field.leftViewMode = .always
@@ -67,10 +67,10 @@ class RegistrationViewController: UIViewController {
     private let registerButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .systemGray4
-        button.setTitle("Sign up", for: .normal)
+        button.setTitle("Sign up ", for: .normal)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = Constants.cornerRadius
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = .systemGreen
         button.setTitleColor(.white, for: .normal)
         return button
     }()
@@ -118,7 +118,7 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        registerButton.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
+        registerButton.addTarget(self, action: #selector(didTapRegisterButton), for: .touchUpInside)
         
         
         
@@ -137,73 +137,43 @@ class RegistrationViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         //assign frames on subview init
-        headerView.frame = CGRect(
-            x:0,
-            y:0.0,
-            width: view.width,
-            height: view.height/3.0)
- 
-        
-        // to move bellow staus bar  y: view.safeAreaInsets.top
+
         
         usernameField.frame = CGRect(
-            x:25,
-            y: headerView.bottom + 40,
-            width: view.width - 50,
-            height: 52.0
+            x:20,
+            y: view.safeAreaInsets.top + 100,
+            width: view.width - 40,
+            height: Constants.inputHeight
         )
         
         
         emailField.frame = CGRect(
-            x:25,
+            x:20,
             y: usernameField.bottom + 10,
-            width: view.width - 50,
-            height: 52.0
+            width: view.width - 40,
+            height: Constants.inputHeight
         )
         
         
         passwordField.frame = CGRect(
-            x:25,
+            x:20,
             y: emailField.bottom + 10,
-            width: view.width - 50,
-            height: 52.0
+            width: view.width - 40,
+            height: Constants.inputHeight
         )
         
         registerButton.frame = CGRect(
-            x:25,
-            y: view.height - view.safeAreaInsets.bottom - 50git ,
-            width: view.width - 50,
-            height: 52.0
+            x:20,
+            y: view.height - view.safeAreaInsets.bottom - 50,
+            width: view.width - 40,
+            height: Constants.inputHeight
         )
-        
-
+    
         
         view.backgroundColor = .systemBackground
-        configureHeaderView()
     }
     
-    private func configureHeaderView(){
-        guard headerView.subviews.count == 1 else {
 
-            return
-        }
-        //
-        guard let backgroundView = headerView.subviews.first else {
-            return
-        }
-        
-        backgroundView.frame = headerView.bounds
-        // add ig logo
-        let ImageView = UIImageView(image: UIImage(named: "instagram-text-logo"))
-        headerView.addSubview(ImageView)
-        ImageView.contentMode = .scaleAspectFit
-        ImageView.frame = CGRect(
-            x: headerView.width/4.0,
-            y: view.safeAreaInsets.top ,
-            width: headerView.width/2.0,
-            height: headerView.height - view.safeAreaInsets.top
-        )
-    }
     
     
 
@@ -215,7 +185,7 @@ class RegistrationViewController: UIViewController {
 
     }
     
-    @objc private func didTapLoginButton(){
+    @objc private func didTapRegisterButton(){
         //dismiss input
         passwordField.resignFirstResponder()
         emailField.resignFirstResponder()
@@ -284,7 +254,7 @@ extension RegistrationViewController: UITextFieldDelegate{
             passwordField.becomeFirstResponder()
         }
         else if textField == passwordField {
-            didTapLoginButton()
+            didTapRegisterButton()
         }
         return true
     }
