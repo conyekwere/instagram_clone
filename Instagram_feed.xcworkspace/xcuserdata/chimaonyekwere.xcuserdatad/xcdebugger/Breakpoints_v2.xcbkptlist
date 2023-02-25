@@ -3,4 +3,70 @@
    uuid = "4683DC5C-63D6-42BC-B09C-791060AE2ACF"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CA4326E8-1DC0-43FC-A432-5E9FC724C252"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instagram_feed/Controllers/Other/Onboarding/RegistrationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "RegistrationViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C0AD734B-517D-4693-9F79-EA16235BA41B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Instagram_feed/Controllers/Other/Onboarding/RegistrationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "Constants"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "C0AD734B-517D-4693-9F79-EA16235BA41B - b48e73d3442a6150"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Instagram_feed.RegistrationViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Instagram_feed.RegistrationViewController"
+                  moduleName = "Instagram_feed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chimaonyekwere/Desktop/Swift%20Repo/Instagram-clone/instaclone/instagram_clone/Instagram_feed/Controllers/Other/Onboarding/RegistrationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "187">
+               </Location>
+               <Location
+                  uuid = "C0AD734B-517D-4693-9F79-EA16235BA41B - e40faf78c9488e18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Instagram_feed.RegistrationViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Instagram_feed.RegistrationViewController&gt;"
+                  moduleName = "Instagram_feed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chimaonyekwere/Desktop/Swift%20Repo/Instagram-clone/instaclone/instagram_clone/Instagram_feed/Controllers/Other/Onboarding/RegistrationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "135">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
