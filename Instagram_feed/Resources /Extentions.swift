@@ -40,5 +40,21 @@ extension UIView {
         
     }
     
+   
     
+   
+    
+}
+
+
+extension String {
+    
+    //MARK :
+    ///When string value has  @ values and or dash replace with "_" to insert into firebase data base
+    ///
+    ///
+    ///
+     func safeDatabaseKey() -> String {
+        return self.replacingOccurrences(of: ".", with: "_").replacingOccurrences(of: "@", with: "_")
+    }
 }

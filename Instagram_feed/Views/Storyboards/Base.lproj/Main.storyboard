@@ -89,7 +89,7 @@
         <scene sceneID="8Pj-bN-UOK">
             <objects>
                 <navigationController id="uhk-6s-9hO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="bell" catalog="system" id="gEo-YT-s9T"/>
+                    <tabBarItem key="tabBarItem" title="" image="heart" catalog="system" id="gEo-YT-s9T"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RU3-6F-pPr">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -201,7 +201,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bell" catalog="system" width="128" height="124"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>

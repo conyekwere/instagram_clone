@@ -193,12 +193,11 @@ class RegistrationViewController: UIViewController {
         
         guard let username = usernameField.text, !username.isEmpty,
               let email = emailField.text, !email.isEmpty,
-              let password = passwordField.text, !password.isEmpty, password.count >= 8  else
+              let password = passwordField.text,  !password.isEmpty, password.count >= 8  else
               {
                   return
               }
-        
-        
+
 //        var usernameType: String?
 //        var emailType: String?
 //
@@ -212,10 +211,12 @@ class RegistrationViewController: UIViewController {
 //            usernameType = username
 //        }
         
-        AuthManager.shared.loginUser(username:username,email: email,password: password) { success in
+        
+        
+        AuthManager.shared.registerNewUser(username:username,email: email,password: password) { registered in
             
             DispatchQueue.main.async {
-                if success {
+                if registered {
                     //user logged in
                     self.dismiss(animated: true, completion: nil)
                 }
@@ -235,6 +236,10 @@ class RegistrationViewController: UIViewController {
             }
 
         }
+        
+        
+        
+        
 //        let vc = HomeViewController()
 //        present(vc, animated: true)
     }
@@ -248,9 +253,9 @@ class RegistrationViewController: UIViewController {
 extension RegistrationViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == usernameField {
-            passwordField.becomeFirstResponder()
+            emailField.becomeFirstResponder()
         }
-        if textField == usernameField {
+       else if textField == emailField {
             passwordField.becomeFirstResponder()
         }
         else if textField == passwordField {
@@ -258,6 +263,5 @@ extension RegistrationViewController: UITextFieldDelegate{
         }
         return true
     }
-
 
 }

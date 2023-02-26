@@ -101,7 +101,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginButton.addTarget(self, action: #selector(didTapRegisterButton), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
         
         createAccountButton.addTarget(self, action: #selector(didTapCreateAccountButton), for: .touchUpInside)
         
@@ -220,6 +220,8 @@ class LoginViewController: UIViewController {
         //dismiss input
         passwordField.resignFirstResponder()
         usernameEmailField.resignFirstResponder()
+
+    
         
         guard let usernameEmail = usernameEmailField.text, !usernameEmail.isEmpty,
               let password = passwordField.text, !password.isEmpty, password.count >= 8  else {
@@ -240,7 +242,7 @@ class LoginViewController: UIViewController {
             username = usernameEmail
         }
         
-        AuthManager.shared.loginUser(username:username,email: email,password: password) { success in
+        AuthManager.shared.loginUser(username:username,email: email, password: password) { success in
             
             DispatchQueue.main.async {
                 if success {
@@ -265,6 +267,7 @@ class LoginViewController: UIViewController {
         }
 //        let vc = HomeViewController()
 //        present(vc, animated: true)
+
     }
 
 
