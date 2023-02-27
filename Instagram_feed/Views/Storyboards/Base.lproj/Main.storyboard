@@ -199,6 +199,22 @@
             </objects>
             <point key="canvasLocation" x="-458" y="2914"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="eBd-dS-C1r">
+            <objects>
+                <viewController id="yrR-qK-adp" customClass="SettingsViewController" customModule="Instagram_feed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BLB-Qv-WZv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="jnp-Tf-NwT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="szF-HQ-5XI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t0I-xa-y5R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="320" y="2914"/>
+        </scene>
     </scenes>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>

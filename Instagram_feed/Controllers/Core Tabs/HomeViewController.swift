@@ -19,13 +19,7 @@ class HomeViewController: UIViewController {
         super.viewDidAppear(animated)
         // check auth status
         handleNotAuthenticated()
-        
-//        do {
-//            try Auth.auth().signOut()
-//        }
-//        catch{
-//            print("Failed to sign out ")
-//        }
+
     }
 
     private func handleNotAuthenticated(){

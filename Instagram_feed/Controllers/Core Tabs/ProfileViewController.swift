@@ -16,7 +16,9 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        view.backgroundColor = .systemBackground
+        configureNavigationBar()
+        
         // Create a UILabel and add it to the view
               emailLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
               emailLabel.center = CGPoint(x: view.center.x, y: view.center.y - 50)
@@ -34,5 +36,18 @@ class ProfileViewController: UIViewController {
         
     }
     
-
+     private func configureNavigationBar(){
+         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(didTapSettingsButton))
+        
+    }
+    
+    @objc private func didTapSettingsButton(){
+        
+        let vc = SettingsViewController()
+        vc.title = "Settings"
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    
 }

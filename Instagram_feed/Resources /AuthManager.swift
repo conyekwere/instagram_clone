@@ -10,6 +10,7 @@ import Foundation
 
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseCoreInternal
 
 
 public class AuthManager {
@@ -84,6 +85,21 @@ public class AuthManager {
             
         }
         
+    }
+    
+    /// logout Firebase User
+    
+    public func logOutUser(completion: @escaping (Bool) -> Void){
+                do {
+                    try Auth.auth().signOut()
+                    completion(true)
+                    return
+                }
+                catch{
+                    print(error)
+                    completion(false)
+                    return
+                }
     }
     
 }
