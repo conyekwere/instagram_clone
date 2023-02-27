@@ -248,6 +248,8 @@ class LoginViewController: UIViewController {
                 if success {
                     //user logged in
                     self.dismiss(animated: true, completion: nil)
+                    self.navigationController?.popToRootViewController(animated: false)
+                    self.tabBarController?.selectedIndex = 0
                 }
                 else{
                     // an error occurred
