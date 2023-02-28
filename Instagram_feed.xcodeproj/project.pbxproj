@@ -34,6 +34,10 @@
 		5D96082829A6D84B00FA33DA /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D96082729A6D84B00FA33DA /* AuthManager.swift */; };
 		5D96082A29A6D8F100FA33DA /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D96082929A6D8F100FA33DA /* StorageManager.swift */; };
 		5D96082C29A6E1CB00FA33DA /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D96082B29A6E1CB00FA33DA /* Extentions.swift */; };
+		5DD1CC3229AC8C6A00CA424D /* IGFeedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1CC3129AC8C6A00CA424D /* IGFeedPostTableViewCell.swift */; };
+		5DD1CC3629AC939300CA424D /* IGFeedPostHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1CC3529AC939300CA424D /* IGFeedPostHeaderTableViewCell.swift */; };
+		5DD1CC3829AC961C00CA424D /* IGFeedPostActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1CC3729AC961C00CA424D /* IGFeedPostActionsTableViewCell.swift */; };
+		5DD1CC3A29AC969D00CA424D /* IGFeedPostGeneralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1CC3929AC969D00CA424D /* IGFeedPostGeneralTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +71,10 @@
 		5D96082729A6D84B00FA33DA /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		5D96082929A6D8F100FA33DA /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		5D96082B29A6E1CB00FA33DA /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		5DD1CC3129AC8C6A00CA424D /* IGFeedPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostTableViewCell.swift; sourceTree = "<group>"; };
+		5DD1CC3529AC939300CA424D /* IGFeedPostHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		5DD1CC3729AC961C00CA424D /* IGFeedPostActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostActionsTableViewCell.swift; sourceTree = "<group>"; };
+		5DD1CC3929AC969D00CA424D /* IGFeedPostGeneralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostGeneralTableViewCell.swift; sourceTree = "<group>"; };
 		EBF0568708AB2B8F695F1D3C /* Pods-Instagram_feed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram_feed.release.xcconfig"; path = "Target Support Files/Pods-Instagram_feed/Pods-Instagram_feed.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +149,7 @@
 		5D70FD0929A45D05001D1C37 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5DD1CC3029AC8BEB00CA424D /* Cells */,
 				5D70FD0C29A45DC8001D1C37 /* Storyboards */,
 				5D70FCE129A45C8B001D1C37 /* Assets.xcassets */,
 			);
@@ -221,6 +230,25 @@
 				5D96081B29A6D16500FA33DA /* PostEditorViewController.swift */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		5DD1CC3029AC8BEB00CA424D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5DD1CC3329AC914600CA424D /* Home Feed */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5DD1CC3329AC914600CA424D /* Home Feed */ = {
+			isa = PBXGroup;
+			children = (
+				5DD1CC3129AC8C6A00CA424D /* IGFeedPostTableViewCell.swift */,
+				5DD1CC3529AC939300CA424D /* IGFeedPostHeaderTableViewCell.swift */,
+				5DD1CC3729AC961C00CA424D /* IGFeedPostActionsTableViewCell.swift */,
+				5DD1CC3929AC969D00CA424D /* IGFeedPostGeneralTableViewCell.swift */,
+			);
+			path = "Home Feed";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,10 +371,13 @@
 				5D96081C29A6D16500FA33DA /* PostEditorViewController.swift in Sources */,
 				5D70FD1329A45F88001D1C37 /* ProfileViewController.swift in Sources */,
 				5D96082429A6D21200FA33DA /* SearchViewController.swift in Sources */,
+				5DD1CC3629AC939300CA424D /* IGFeedPostHeaderTableViewCell.swift in Sources */,
 				5D70FD0F29A45F13001D1C37 /* ExploreViewController.swift in Sources */,
 				5D70FD1129A45F5C001D1C37 /* CameraViewController.swift in Sources */,
 				5D1C2A7029A5A4300028ED29 /* RegistrationViewController.swift in Sources */,
+				5DD1CC3A29AC969D00CA424D /* IGFeedPostGeneralTableViewCell.swift in Sources */,
 				5D96082A29A6D8F100FA33DA /* StorageManager.swift in Sources */,
+				5DD1CC3229AC8C6A00CA424D /* IGFeedPostTableViewCell.swift in Sources */,
 				5D96081629A6C6F700FA33DA /* PostViewController.swift in Sources */,
 				5D96082629A6D3D000FA33DA /* DatabaseManager.swift in Sources */,
 				5D96082029A6D1B000FA33DA /* SearchResultViewController.swift in Sources */,
@@ -359,6 +390,7 @@
 				5D96081A29A6C74A00FA33DA /* PublishPostViewController.swift in Sources */,
 				5D96082229A6D1E600FA33DA /* ListViewController.swift in Sources */,
 				5D66FAAA29A9E21000801003 /* UIConstants.swift in Sources */,
+				5DD1CC3829AC961C00CA424D /* IGFeedPostActionsTableViewCell.swift in Sources */,
 				5D70FCDB29A45C89001D1C37 /* SceneDelegate.swift in Sources */,
 				5D96082C29A6E1CB00FA33DA /* Extentions.swift in Sources */,
 			);

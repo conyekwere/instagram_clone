@@ -7,6 +7,7 @@
 
 
 import UIKit
+import SafariServices
 
 struct SettingCellModel {
     let title: String
@@ -41,30 +42,30 @@ final class SettingsViewController: UIViewController {
     }
 
     private func configureModels() {
-//        data.append([
-//            SettingCellModel(title: "Edit Profile") { [weak self] in
-//                self?.didTapEditProfile()
-//            },
-//            SettingCellModel(title: "Invite Friends") { [weak self] in
-//                self?.didTapInviteFriends()
-//            },
-//            SettingCellModel(title: "Save Original Posts") { [weak self] in
-//                self?.didTapSaveOriginalPosts()
-//            }
-//        ])
+        data.append([
+            SettingCellModel(title: "Edit Profile") { [weak self] in
+                self?.didTapEditProfile()
+            },
+            SettingCellModel(title: "Invite Friends") { [weak self] in
+                self?.didTapInviteFriends()
+            },
+            SettingCellModel(title: "Save Original Posts") { [weak self] in
+                self?.didTapSaveOriginalPosts()
+            }
+        ])
 //
 //
-//        data.append([
-//            SettingCellModel(title: "Terms of Service") { [weak self] in
-//                self?.openURL(type: .terms)
-//            },
-//            SettingCellModel(title: "Privacy Policy") { [weak self] in
-//                self?.openURL(type: .privacy)
-//            },
-//            SettingCellModel(title: "Help / Feedback") { [weak self] in
-//                self?.openURL(type: .help)
-//            }
-//        ])
+        data.append([
+            SettingCellModel(title: "Terms of Service") { [weak self] in
+                self?.openURL(type: .terms)
+            },
+            SettingCellModel(title: "Privacy Policy") { [weak self] in
+                self?.openURL(type: .privacy)
+            },
+            SettingCellModel(title: "Help / Feedback") { [weak self] in
+                self?.openURL(type: .help)
+            }
+        ])
 
         data.append([
             SettingCellModel(title: "Log Out") { [weak self] in
@@ -74,7 +75,52 @@ final class SettingsViewController: UIViewController {
     }
 
 
+    enum SettingsURLType {
+        case terms, privacy, help
+    }
 
+    private func openURL(type: SettingsURLType) {
+        let urlString: String
+        switch type {
+        case .terms: urlString = "https://help.instagram.com/581066165581870"
+        case .privacy: urlString = "https://help.instagram.com/519522125107875?helpref=page_content"
+        case .help: urlString = "https://help.instagram.com/"
+        }
+
+        guard let url = URL(string: urlString) else {
+            return
+        }
+
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true)
+    }
+
+    private func didTapSaveOriginalPosts() {
+
+    }
+
+    private func didTapInviteFriends() {
+        // Show share sheet to invite friends
+        let textToShare = "Join me on Instagram!"
+        let appUrl = URL(string: "https://l.instagram.com/?u=https%3A%2F%2Fitunes.apple.com%2Fapp%2Finstagram%2Fid389801252%3Fpt%3D428156%26ct%3Digweb.loginPage.badge%26mt%3D8%26vt%3Dlo&e=AT34_WG2FUCQ85QLgpzqHDJZltwweCF05LsyRLvim1R3qEBHsB9PDPBy1ranxOEmTVCKb5XHQt-APlKbpQJ1rh-lrkOazSX8ErhZhHziE8ipKidtk0V61TpoR0FltoDSeADBWUn1YwyV6LNfHYfQcEqtQoN6FhTheFs9MOXfO74")
+
+        let activityViewController = UIActivityViewController(activityItems: [textToShare, appUrl!], applicationActivities: nil)
+
+        // Excluded share options
+//        activityViewController.excludedActivityTypes = [.postToFacebook, .postToTwitter, .postToWeibo]
+
+
+        self.present(activityViewController, animated: true, completion: nil)
+
+    }
+
+    private func didTapEditProfile() {
+        let vc = EditProfileViewController()
+        vc.title = "Edit Profile"
+        let navVC = UINavigationController(rootViewController: vc)
+        navVC.modalPresentationStyle = .fullScreen
+        present(navVC, animated: true)
+    }
 
 
     private func didTapLogOut() {
