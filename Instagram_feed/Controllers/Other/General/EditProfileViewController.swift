@@ -24,6 +24,7 @@ class EditProfileViewController: UIViewController, UITableViewDataSource{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableHeaderView = createTableHeaderView()
         configureModels()
         tableView.dataSource = self
         view.addSubview(tableView)
@@ -38,6 +39,29 @@ class EditProfileViewController: UIViewController, UITableViewDataSource{
     }
     // MARK : - Tableview
     
+    private func createTableHeaderView() -> UIView{
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: view.height/3).integral)
+        
+        let buttonSize = header.height/1.5
+        let profilePhotoButton = UIButton(frame: CGRect(x: (view.width - buttonSize)/2, y: (header.height - buttonSize) / 2, width: buttonSize, height: buttonSize))
+        
+        header.addSubview(profilePhotoButton)
+        profilePhotoButton.layer.masksToBounds = true
+        profilePhotoButton.layer.cornerRadius = buttonSize / 2.0
+        profilePhotoButton.addTarget(self, action: #selector(didTapProfilePhotoButton), for: .touchUpInside)
+        profilePhotoButton.setBackgroundImage(UIImage(systemName: "person.circle"), for: .normal)
+        profilePhotoButton.layer.borderWidth = 1
+        profilePhotoButton.layer.borderColor = UIColor.secondarySystemBackground.cgColor
+        
+        
+        return header
+    }
+    
+    
+    
+    @objc func didTapProfilePhotoButton(){
+        
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
