@@ -38,6 +38,7 @@
 		5DD1CC3629AC939300CA424D /* IGFeedPostHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1CC3529AC939300CA424D /* IGFeedPostHeaderTableViewCell.swift */; };
 		5DD1CC3829AC961C00CA424D /* IGFeedPostActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1CC3729AC961C00CA424D /* IGFeedPostActionsTableViewCell.swift */; };
 		5DD1CC3A29AC969D00CA424D /* IGFeedPostGeneralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1CC3929AC969D00CA424D /* IGFeedPostGeneralTableViewCell.swift */; };
+		5DD1CC4029AEF0F800CA424D /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1CC3F29AEF0F800CA424D /* FormTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		5DD1CC3529AC939300CA424D /* IGFeedPostHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		5DD1CC3729AC961C00CA424D /* IGFeedPostActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostActionsTableViewCell.swift; sourceTree = "<group>"; };
 		5DD1CC3929AC969D00CA424D /* IGFeedPostGeneralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostGeneralTableViewCell.swift; sourceTree = "<group>"; };
+		5DD1CC3F29AEF0F800CA424D /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
 		EBF0568708AB2B8F695F1D3C /* Pods-Instagram_feed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram_feed.release.xcconfig"; path = "Target Support Files/Pods-Instagram_feed/Pods-Instagram_feed.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				5DD1CC3329AC914600CA424D /* Home Feed */,
+				5DD1CC3F29AEF0F800CA424D /* FormTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				5D1C2A7029A5A4300028ED29 /* RegistrationViewController.swift in Sources */,
 				5DD1CC3A29AC969D00CA424D /* IGFeedPostGeneralTableViewCell.swift in Sources */,
 				5D96082A29A6D8F100FA33DA /* StorageManager.swift in Sources */,
+				5DD1CC4029AEF0F800CA424D /* FormTableViewCell.swift in Sources */,
 				5DD1CC3229AC8C6A00CA424D /* IGFeedPostTableViewCell.swift in Sources */,
 				5D96081629A6C6F700FA33DA /* PostViewController.swift in Sources */,
 				5D96082629A6D3D000FA33DA /* DatabaseManager.swift in Sources */,
