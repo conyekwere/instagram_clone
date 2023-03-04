@@ -24,11 +24,24 @@ final class ProfileViewController: UIViewController {
   
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top:0,left:0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: view.width/3, height: view.width/3)
+        layout.minimumLineSpacing = 1
+        layout.minimumInteritemSpacing = 1
+        layout.sectionInset = UIEdgeInsets(top:0,left:1, bottom: 0, right: 1)
+        let boxSize  = (view.width - 4 )/3
+        layout.itemSize = CGSize(width: boxSize, height: boxSize)
+        
+        
         collectionView = UICollectionView(frame: .zero,collectionViewLayout: layout)
-        /// this structures the collection view with a more strict output
-        ///
+
+        // Cells
+        collectionView?.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
+        
+        // Headers
+        collectionView?.register(ProfileTabsCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileTabsCollectionReusableView.identifier)
+        collectionView?.register(ProfileInfoHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileInfoHeaderCollectionReusableView.identifier)
+
+        
+        
         collectionView?.delegate = self
         collectionView?.dataSource = self
         guard let collectionView = collectionView else {
@@ -78,11 +91,14 @@ extension ProfileViewController: UICollectionViewDelegate , UICollectionViewData
   
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-     return 0
+     return 30
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
+        
+        cell.backgroundColor = .systemBlue
+        return cell
     }
     
     
