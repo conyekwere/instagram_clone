@@ -11,6 +11,7 @@
 		5D096D5829B3357B00439445 /* ProfileInfoHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D096D5729B3357B00439445 /* ProfileInfoHeaderCollectionReusableView.swift */; };
 		5D096D5A29B3361200439445 /* ProfileTabsCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D096D5929B3361200439445 /* ProfileTabsCollectionReusableView.swift */; };
 		5D096D5C29B3385400439445 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D096D5B29B3385400439445 /* PhotoCollectionViewCell.swift */; };
+		5D096D5F29B4567100439445 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D096D5E29B4567100439445 /* Models.swift */; };
 		5D1C2A7029A5A4300028ED29 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1C2A6F29A5A4300028ED29 /* RegistrationViewController.swift */; };
 		5D66FAAA29A9E21000801003 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D66FAA929A9E21000801003 /* UIConstants.swift */; };
 		5D70FCD929A45C89001D1C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D70FCD829A45C89001D1C37 /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 		5D096D5729B3357B00439445 /* ProfileInfoHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		5D096D5929B3361200439445 /* ProfileTabsCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabsCollectionReusableView.swift; sourceTree = "<group>"; };
 		5D096D5B29B3385400439445 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		5D096D5E29B4567100439445 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		5D1C2A6F29A5A4300028ED29 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		5D66FAA929A9E21000801003 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		5D70FCD529A45C89001D1C37 /* Instagram_feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram_feed.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +179,7 @@
 		5D70FD0A29A45D1F001D1C37 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5D096D5E29B4567100439445 /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				5D096D5829B3357B00439445 /* ProfileInfoHeaderCollectionReusableView.swift in Sources */,
 				5D96082829A6D84B00FA33DA /* AuthManager.swift in Sources */,
 				5D70FD1529A45FBB001D1C37 /* NotificationsViewController.swift in Sources */,
+				5D096D5F29B4567100439445 /* Models.swift in Sources */,
 				5D96081A29A6C74A00FA33DA /* PublishPostViewController.swift in Sources */,
 				5D96082229A6D1E600FA33DA /* ListViewController.swift in Sources */,
 				5D66FAAA29A9E21000801003 /* UIConstants.swift in Sources */,

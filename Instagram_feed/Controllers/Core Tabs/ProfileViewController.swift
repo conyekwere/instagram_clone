@@ -19,7 +19,7 @@ final class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+//        view.backgroundColor = .systemBackground
         configureNavigationBar()
   
         let layout = UICollectionViewFlowLayout()
@@ -89,15 +89,22 @@ final class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
   
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        
+        return 2
+        
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0 {
+            return 0
+        }
      return 30
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
-        
-        cell.backgroundColor = .systemBlue
+        cell.configure(debugImage: "art")
         return cell
     }
     
@@ -106,8 +113,34 @@ extension ProfileViewController: UICollectionViewDelegate , UICollectionViewData
         collectionView.deselectItem(at: indexPath, animated: true)
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        guard kind == UICollectionView.elementKindSectionHeader else {
+
+            // not a footer
+            return UICollectionReusableView()
+        }
+        
+        if indexPath.section == 1 {
+            
+            // tab header
+        let tabControlHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileTabsCollectionReusableView.identifier, for: indexPath) as!ProfileTabsCollectionReusableView
+            return tabControlHeader
+        }
+        
+        let profileHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileInfoHeaderCollectionReusableView.identifier, for: indexPath) as! ProfileInfoHeaderCollectionReusableView
+        
+        
+        return profileHeader
+    }
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 0 {
+            return CGSize(width: collectionView.width, height: collectionView.height/3)
+        }
+        // Size of section tabs
+        return  CGSize(width: collectionView.width, height: 65)
+    }
 }
 
 //extension ProfileViewController: ProfileInfoHeaderCollectionReusableViewDelegate {
