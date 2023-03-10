@@ -105,14 +105,7 @@ class RegistrationViewController: UIViewController {
         return button
     }()
     
-    private let headerView: UIView = {
-        let header = UIView()
-        header.clipsToBounds = true
-        let backgroundImageView = UIImageView(image: UIImage(named: "ig-bg"))
-        header.addSubview(backgroundImageView)
-        //        header.backgroundColor = .red
-        return header
-    }()
+
     
     
     override func viewDidLoad() {
