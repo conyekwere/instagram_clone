@@ -168,22 +168,25 @@ extension ProfileViewController: ProfileInfoHeaderCollectionReusableViewDelegate
     }
 
     func profileHeaderDidTapFollowersInfoButton(_ header: ProfileInfoHeaderCollectionReusableView) {
-//        var mockData = [UserRelationship]()
-//        for x in 0..<10 {
-//            mockData.append(UserRelationship(username: "@joe", namm: "Joe Smith", type: x % 2 == 0 ? .following : .not_following))
-//        }
-        let vc = ListViewController()
+        var mockData = [UserRelationship]()
+        for x in 0..<10 {
+            mockData.append(UserRelationship(username: "@joe", name: "Joe Smith", type: x % 2 == 0 ? .following : .not_following))
+        }
+        let vc = ListViewController(data: mockData)
         vc.title = "Followers"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
     }
 
     func profileHeaderDidTapFollowingInfoButton(_ header: ProfileInfoHeaderCollectionReusableView) {
-//        var mockData = [UserRelationship]()
-//        for x in 0..<10 {
-//            mockData.append(UserRelationship(username: "@joe", namm: "Joe Smith", type: x % 2 == 0 ? .following : .not_following))
-//        }
-        let vc = ListViewController()
+        
+        var mockData =  [UserRelationship]()
+        for x in 0..<10 {
+            mockData.append(UserRelationship(username: "@joe", name: "Joe Smith" , type: x % 2 == 0 ? .following : .not_following ))
+        }
+        
+        let vc = ListViewController(data: mockData)
+
         vc.title = "Following"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
