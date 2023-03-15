@@ -10,7 +10,8 @@ protocol UserFollowTableViewCellDelegate: AnyObject {
     func didTapFollowUnfollowButton(model: UserRelationship)
 }
 enum FollowState{
-    case following , not_following
+    case following 
+    case not_following
 }
 
 struct UserRelationship{
@@ -56,7 +57,7 @@ class UserFollowTableViewCell: UITableViewCell {
     private let followButton: UIButton = {
         let button = UIButton()
         button.layer.masksToBounds = true
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         button.layer.cornerRadius = Constants.cornerRadius
         button.backgroundColor = .link
         return button
@@ -92,11 +93,11 @@ class UserFollowTableViewCell: UITableViewCell {
         switch model.type {
         case .following:
             // show unfollow button
-            followButton.setTitle("Unfollow", for: .normal)
+            followButton.setTitle("Following", for: .normal)
             followButton.setTitleColor(.label, for: .normal)
             followButton.backgroundColor = .systemBackground
             followButton.layer.borderWidth = 1.0
-            followButton.layer.borderColor = UIColor.label.cgColor
+            followButton.layer.borderColor = UIColor.secondaryLabel.cgColor
         case .not_following:
             // show follow button
             followButton.setTitle("Follow", for: .normal)
@@ -120,22 +121,16 @@ class UserFollowTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-
-        profileImageView.frame = CGRect(x: 3,
-                                        y: 3,
+        let buttonWidth = contentView.width > 500 ? 220.0 : contentView.width/3.5
+        let labelHeight = contentView.height/4
+        profileImageView.frame = CGRect(x: 16,
+                                        y: (contentView.height-(contentView.height-8))/2,
                                         width: contentView.height-8,
                                         height: contentView.height-8)
         profileImageView.layer.cornerRadius = profileImageView.height/2.0
 
-        let buttonWidth = contentView.width > 500 ? 220.0 : contentView.width/3
-        followButton.frame = CGRect(x: contentView.width-5-buttonWidth,
-                                    y: (contentView.height-40)/2,
-                                    width: buttonWidth,
-                                    height: 32)
-        
-        let labelHeight = contentView.height/3
-        nameLabel.frame = CGRect(x: profileImageView.right+5,
-                                 y: 0,
+        nameLabel.frame = CGRect(x: profileImageView.right+6,
+                                 y:  (contentView.height-labelHeight)/3,
                                  width: contentView.width-8-profileImageView.width-buttonWidth,
                                  height: labelHeight)
         usernameLabel.frame = CGRect(x: profileImageView.right+5,
@@ -143,8 +138,16 @@ class UserFollowTableViewCell: UITableViewCell {
                                      width: contentView.width-8-profileImageView.width-buttonWidth,
                                      height: labelHeight)
         
+        followButton.frame = CGRect(x: contentView.width-buttonWidth-16,
+                                    y:  (contentView.height-32)/2,
+                                    width: buttonWidth,
+                                    height: 32)
         
-        // change view if first item ontable 
+        
+        
+        
+        
+        // change view if first item ontable
 //        if let tableView = self.superview as? UITableView,
 //            let indexPath = tableView.indexPath(for: self),
 //            indexPath.row == 0 {
