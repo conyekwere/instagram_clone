@@ -279,6 +279,7 @@
 				5D1A440529BD8E830067D212 /*  Notifications */,
 				5DD1CC3329AC914600CA424D /* Home Feed */,
 				5DD1CC3F29AEF0F800CA424D /* FormTableViewCell.swift */,
+				5D096D5B29B3385400439445 /* PhotoCollectionViewCell.swift */,
 				5DE8F68829BAB81700C80991 /* UserFollowTableViewCell.swift */,
 				5DE8F68A29BABDFB00C80991 /* PhotoTableViewCell.swift */,
 			);
@@ -292,7 +293,6 @@
 				5DD1CC3529AC939300CA424D /* IGFeedPostHeaderTableViewCell.swift */,
 				5DD1CC3729AC961C00CA424D /* IGFeedPostActionsTableViewCell.swift */,
 				5DD1CC3929AC969D00CA424D /* IGFeedPostGeneralTableViewCell.swift */,
-				5D096D5B29B3385400439445 /* PhotoCollectionViewCell.swift */,
 			);
 			path = "Home Feed";
 			sourceTree = "<group>";
