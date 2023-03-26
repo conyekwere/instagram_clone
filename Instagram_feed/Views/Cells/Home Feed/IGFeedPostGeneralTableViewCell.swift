@@ -14,7 +14,7 @@ final class  IGFeedPostGeneralTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .systemGray2
+        contentView.backgroundColor = .quaternarySystemFill
     }
     
     public func configure() {
